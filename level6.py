@@ -10,15 +10,15 @@ import os
 import re
 
 #first download the zip file from http://www.pythonchallenge.com/pc/def/channel.zip
-urllib.urlretrieve("http://www.pythonchallenge.com/pc/def/channel.zip", "channel.zip") # or we can use commad line "url -o channel.zip http://www.pythonchallenge.com/pc/def/channel.zip"
+urllib.urlretrieve("http://www.pythonchallenge.com/pc/def/channel.zip", "level6.zip") # or we can use commad line "url -o level6.zip http://www.pythonchallenge.com/pc/def/channel.zip"
 
-if not os.path.isfile("channel.zip"):
-    print "channel.zip does not exit in current dir"
+if not os.path.isfile("level6.zip"):
+    print "level6.zip does not exit in current dir"
     sys.exit(1)
 
 comment = []
 
-zf = zipfile.ZipFile("channel.zip")
+zf = zipfile.ZipFile("level6.zip")
 filename = re.search("start from (\d+)", zf.read("readme.txt")).group(1) + ".txt"
 while True:
     #can't use open() because it is a zip file
